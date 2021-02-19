@@ -12,10 +12,11 @@ const Home = ({navigation}) => {
         }}>
           <Image source={require('../Image/smile.jpg')}
       style={{width: 420, height: 500}} />
-        <Text></Text>
+        <Text>Click</Text>
         <Button
         title="시작하기"
         onPress={() => { navigation.navigate("List") }}
+        color="blue"
         style={{width:300, height: 200}} 
         />
         

@@ -2,11 +2,8 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { Card, Button, Icon } from 'react-native-elements'
 
-import { useDispatch } from 'react-redux'
-import { addAction } from '../redux/actions'
-
+import { ScrollView } from 'react-native-gesture-handler'
 import { LISTDATA } from '../shared/list'
-
 const Details = ( { route, navigation }) => {
 
   console.log("--detail");
@@ -17,7 +14,7 @@ const Details = ( { route, navigation }) => {
   const item = LISTDATA.filter(item => item.id == id)[0];
   console.log(item);
 
-  const dispatch = useDispatch();
+
 
   return (
     <View
@@ -26,21 +23,23 @@ const Details = ( { route, navigation }) => {
         justifyContent: "center",
         alignItems: "center"
       }}>
+        <ScrollView>
       <Card>
         <Card.Title>{item.title}</Card.Title>
         <Card.Divider/>
-        <Card.Image source={{uri: item.image}}>
+        <Card.Image style= {{width:350, height:210}} source={{uri: item.image}}>
         </Card.Image>
         <Card.Divider/>
         <Text style={{marginBottom: 10}}>
           {item.description}
         </Text>
+      
         <Button
-          onPress={() => { navigation.navigate("HomeDetails", {id: item.id}) }}
-          icon={<Icon name='checkmark' type='ionicon' color='#ffffff' />}
+          onPress={() => { navigation.navigate("Result", {id: item.id}) }}
           buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor:"red"}}
-          title='START' />
+          title='결과보기' />
       </Card>
+      </ScrollView>
     </View>
   ) 
 }

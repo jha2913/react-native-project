@@ -27,6 +27,7 @@ const Tab = createBottomTabNavigator();
 const ListStack = createStackNavigator();
 const HomeStack = createStackNavigator();
 
+const HomeDetailsStack = createStackNavigator();
 const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator>
@@ -46,6 +47,15 @@ const ListStackScreen = () => {
     </ListStack.Navigator>
   )
 }
+const HomeDetailsScreen = () => {
+  return (
+    <HomeDetailsStack.Navigator>
+    
+    <HomeDetailsStack.Screen name="HomeDetails" component={HomeDetails} options={{title:"Lobby / 명언모음", headerTitleAlign:"center"}}  />
+    </HomeDetailsStack.Navigator>
+  )
+}
+
 
 const screenOptions = ({ route }) => ({
   tabBarIcon: ({ focused, color, size }) => {
@@ -58,6 +68,11 @@ const screenOptions = ({ route }) => ({
           ? 'home'
           : 'home-outline'; 
         break;
+        case 'HomeDetails':
+          iconName = focused
+            ? 'heart-half-outline'
+            : 'heart-half-outline'; 
+          break;     
       case 'List':
         iconName = focused
           ? 'list'
@@ -67,7 +82,8 @@ const screenOptions = ({ route }) => ({
         iconName = focused
           ? 'checkmark'
           : 'checkmark-outline'; 
-        break;       
+        break;     
+
     }
 
     return <Ionicons name={iconName} size={size} color={color} />;
@@ -87,8 +103,10 @@ export default function App() {
         <NavigationContainer>
           <Tab.Navigator screenOptions={screenOptions} tabBarOptions={tabBarOptions}>
             <Tab.Screen name="Home" component={HomeStackScreen} />
+            <Tab.Screen name="HomeDetails" component={HomeDetailsScreen} />
             <Tab.Screen name="List" component={ListStackScreen} />
             <Tab.Screen name="Result" component={Actions} />
+            
             
           </Tab.Navigator>
         </NavigationContainer>

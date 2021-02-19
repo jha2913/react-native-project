@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import { LISTDATA } from '../shared/list'
 
 import { ListItem } from 'react-native-elements'
@@ -14,7 +13,7 @@ const SearchList = ({ navigation, keyword }) => {
   console.log(keyword)
   
   if(keyword && keyword.length > 1){
-    list = list.filter(item => item.title.toLocaleLowerCase().indexOf(keyword.toLocaleLowerCase()) > -1 )
+    list = list.filter(item => item.title.toLocaleLowerCase().index.toString(keyword.toLocaleLowerCase()) > -1 )
 
     return(
       list.map((item, i) => (
@@ -25,10 +24,12 @@ const SearchList = ({ navigation, keyword }) => {
         </ListItem>
       ))
     )  
+    
   } else {
     return (
       <></>
     )
+    
   }
 }
 

@@ -5,9 +5,9 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import SelectedItem from './SelectedItem';
 
 const simpleData = [
-  {id:1, title:"Lorem ipsum dolor sit amet"},
-  {id:2, title:"consectetur adipiscing elit, sed do eiusmod tempor"},
-  {id:3, title:"incididunt ut labore et dolore magna aliqua"},
+  {id:1, title:""},
+  {id:2, title:""},
+  {id:3, title:""},
 ]
 
 const SimpleList = () => {

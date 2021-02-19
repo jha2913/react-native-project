@@ -2,7 +2,7 @@
 
 def create_aar_targets(aarfiles):
     for aarfile in aarfiles:
-        name = "aars__" + aarfile[aarfile.rindex("/") + 1:aarfile.rindex(".aar")]
+        name = "aars__" + aarfile[aarfile.r("/") + 1:aarfile.rindex(".aar")]
         lib_deps.append(":" + name)
         android_prebuilt_aar(
             name = name,
