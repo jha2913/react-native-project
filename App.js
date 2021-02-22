@@ -33,7 +33,7 @@ const HomeStackScreen = () => {
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={Home} options={{title:"Happy Smile", headerTitleAlign:"center"}} />
       <HomeStack.Screen name="Details" component={Details} options={{title:"Details", headerTitleAlign:"center"}}  />
-      <HomeStack.Screen name="HomeDetails" component={HomeDetails} options={{title:"HomeDetails", headerTitleAlign:"center"}}  />
+      <HomeStack.Screen name="HomeDetails" component={HomeDetails} options={{title:"Lobby / 명언모음", headerTitleAlign:"center"}}  />
     </HomeStack.Navigator>
   )
 }
@@ -51,7 +51,7 @@ const HomeDetailsScreen = () => {
   return (
     <HomeDetailsStack.Navigator>
     
-    <HomeDetailsStack.Screen name="HomeDetails" component={HomeDetails} options={{title:"Lobby / 명언모음", headerTitleAlign:"center"}}  />
+    <HomeDetailsStack.Screen name="Lobby" component={HomeDetails} options={{title:"Lobby / 명언모음", headerTitleAlign:"center"}}  />
     </HomeDetailsStack.Navigator>
   )
 }
@@ -68,7 +68,7 @@ const screenOptions = ({ route }) => ({
           ? 'home'
           : 'home-outline'; 
         break;
-        case 'HomeDetails':
+        case 'Lobby':
           iconName = focused
             ? 'heart-half-outline'
             : 'heart-half-outline'; 
@@ -103,7 +103,7 @@ export default function App() {
         <NavigationContainer>
           <Tab.Navigator screenOptions={screenOptions} tabBarOptions={tabBarOptions}>
             <Tab.Screen name="Home" component={HomeStackScreen} />
-            <Tab.Screen name="HomeDetails" component={HomeDetailsScreen} />
+            <Tab.Screen name="Lobby" component={HomeDetailsScreen} />
             <Tab.Screen name="List" component={ListStackScreen} />
             <Tab.Screen name="Result" component={Actions} />
             

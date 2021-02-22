@@ -1,9 +1,13 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { Card, Button, Icon } from 'react-native-elements'
+import { Card, Button } from 'react-native-elements'
 
 import { ScrollView } from 'react-native-gesture-handler'
 import { LISTDATA } from '../shared/list'
+import { useDispatch } from 'react-redux'
+import { addTask } from '../redux/actions/tasks'
+
+
 const Details = ( { route, navigation }) => {
 
   console.log("--detail");
@@ -14,7 +18,7 @@ const Details = ( { route, navigation }) => {
   const item = LISTDATA.filter(item => item.id == id)[0];
   console.log(item);
 
-
+  const dispatch = useDispatch();
 
   return (
     <View
@@ -35,7 +39,7 @@ const Details = ( { route, navigation }) => {
         </Text>
       
         <Button
-          onPress={() => { navigation.navigate("Result", {id: item.id}) }}
+          onPress={() => { dispatch(addTask(item)) }}
           buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor:"red"}}
           title='결과보기' />
       </Card>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { View } from 'react-native';
 
 import { LISTDATA } from '../shared/list'
 

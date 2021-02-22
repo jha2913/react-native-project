@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Text, View, Button, Image } from 'react-native';
 
 const Home = ({navigation}) => {
