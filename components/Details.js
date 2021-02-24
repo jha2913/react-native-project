@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import { Text, View } from 'react-native';
 import { Card, Button } from 'react-native-elements'
 
@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { LISTDATA } from '../shared/list'
 import { useDispatch } from 'react-redux'
 import { addTask } from '../redux/actions/tasks'
-
+import api from '../api/list'
 
 const Details = ( { route, navigation }) => {
 
@@ -15,11 +15,23 @@ const Details = ( { route, navigation }) => {
 
   const { id } = route.params;
 
-  const item = LISTDATA.filter(item => item.id == id)[0];
+  const [item, setItem] = useState({});
+
+  
   console.log(item);
 
   const dispatch = useDispatch();
 
+
+  const getDetails = useCallback(async () => {
+    const result = await api.get(id);
+    console.log(result.data);
+    setItem(result.data);
+  }, [])
+
+  useEffect(()=>{
+    getDetails();
+  }, []);
   return (
     <View
       style={{
