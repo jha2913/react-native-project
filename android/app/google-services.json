@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "554448969993",
+    "project_id": "notification-lecture-8ce8f",
+    "storage_bucket": "notification-lecture-8ce8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554448969993:android:fecabe297a2fc729fcf3d8",
+        "android_client_info": {
+          "package_name": "com.reactnativeproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554448969993-kc0a91ajhq5bn1vvppel1uqsk8v35ltu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB98kvFl_p8nuSmg4stneV9P5K1vsEthFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554448969993-kc0a91ajhq5bn1vvppel1uqsk8v35ltu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
