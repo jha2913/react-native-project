@@ -11,6 +11,7 @@ import Home from './Home'
 import List from './List'
 import Details from './Details'
 import Actions from './Actions'
+import HWTest from './HWTest'
 import HomeDetails from './HomeDetails'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -79,7 +80,12 @@ const screenOptions = ({ route }) => ({
           ? 'checkmark'
           : 'checkmark-outline'; 
         break;     
-
+        case 'HWTest':
+          iconName = focused
+            ? 'mark'
+            : 'checkmark-outline'; 
+          break;     
+  
     }
 
     return <Ionicons name={iconName} size={size} color={color} />;
@@ -112,6 +118,7 @@ export default function Main() {
             <Tab.Screen name="Lobby" component={HomeDetailsScreen} />
             <Tab.Screen name="List" component={ListStackScreen} />
             <Tab.Screen name="Result" component={Actions} />
+            <Tab.Screen name="HWTest" component={HWTest} />
             
             
           </Tab.Navigator>
