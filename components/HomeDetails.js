@@ -37,11 +37,11 @@ const HomeDetails = ({ navigation }) => {
       style={{margin: 0, width: 130, height: 150}} /> */}
 
 
-<CheckBox
-          value={isSelected}
-          onValueChange={setSelection}
-          style={styles.checkbox}
-        />
+      <CheckBox
+        value={isSelected}
+        onValueChange={setSelection}
+        style={styles.checkbox}
+      />
 
       <FlatList
         data={DATA}
@@ -49,7 +49,7 @@ const HomeDetails = ({ navigation }) => {
         keyExtractor={(item) => String(item.id)}
         extraData={selectedId}
       >
-        
+
       </FlatList>
       <Button
         title="테스트시작"

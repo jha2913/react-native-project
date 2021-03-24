@@ -7,7 +7,7 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <View 
+    <View
       style={{
         flex: 1,
         justifyContent: "center",
@@ -17,7 +17,7 @@ const Counter = () => {
 
       <Text>You clicked {count} times</Text>
 
-      <Button onPress={() => setCount(count+1)} title="Click me!"></Button>
+      <Button onPress={() => setCount(count + 1)} title="Click me!"></Button>
 
     </View>
   )

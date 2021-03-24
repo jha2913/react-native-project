@@ -10,7 +10,7 @@ const List = ({ navigation }) => {
 
   console.log(list);
 
-  const [list, setList] = useState([]);  
+  const [list, setList] = useState([]);
 
   //, [] <- 함수가 재생성될 조건
   //, [] <- 컴포넌트가 처음 마운트 됐을 때만 생성
@@ -32,7 +32,7 @@ const List = ({ navigation }) => {
   //   getList();
   // }, [])
 
-  useEffect(()=>{
+  useEffect(() => {
     // navigation 이벤트 리스너를 생성
     // 반환 값이 이벤트 리스너 해제 함수
     const unsubscribe = navigation.addListener(
@@ -42,19 +42,19 @@ const List = ({ navigation }) => {
         getList();
       }
     )
-    
+
     // clean-up function
     // 객체 소멸 함수
 
-    
+
     // component가 unmount 되는 시점에 clean-up 함수가 실행됨
     // useEffect(()=>{ 
     //   ...
     //  
     //  return 함수
     // }, [])
-    
-    
+
+
 
     // navigation이 변경되는 시점에 clean-up 함수가 실행됨
     // return () => {
@@ -65,24 +65,24 @@ const List = ({ navigation }) => {
 
 
   return (
-    <View style={{flex: 1}}>
-      <ScrollView 
+    <View style={{ flex: 1 }}>
+      <ScrollView
         contentContainerStyle={
-          { flexGrow:1, alignItems:"center", justifyContent:"center"}}
+          { flexGrow: 1, alignItems: "center", justifyContent: "center" }}
       >
         {
           list.map((item, i) => (
-          <ListItem 
-            
-            containerStyle={{width:"100%", height:185}} 
-            key={i}
-            onPress={()=>{navigation.navigate("Details", {id: item.id})}}
+            <ListItem
+
+              containerStyle={{ width: "100%", height: 185 }}
+              key={i}
+              onPress={() => { navigation.navigate("Details", { id: item.id }) }}
             >
-            <Avatar source={{uri: item.image}} style={{width:220, height:150}}/>
-            <ListItem.Content>
-              <ListItem.Title>{item.title}</ListItem.Title>
-              <ListItem.Subtitle>{item.subtitle}</ListItem.Subtitle>
-            </ListItem.Content>
+              <Avatar source={{ uri: item.image }} style={{ width: 220, height: 150 }} />
+              <ListItem.Content>
+                <ListItem.Title>{item.title}</ListItem.Title>
+                <ListItem.Subtitle>{item.subtitle}</ListItem.Subtitle>
+              </ListItem.Content>
             </ListItem>
           ))
         }

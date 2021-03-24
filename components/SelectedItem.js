@@ -7,7 +7,7 @@ const Selecteditem = ({ item }) => {
       <Text>{item.id} {item.title}</Text>
     </View>
   )
-  
+
 }
 
 export default Selecteditem;

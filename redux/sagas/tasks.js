@@ -11,7 +11,7 @@ function* addTask(action) {
   console.log(result.data);
 
   // 2. state를 변경하는 reducer 함수를 실행
-  yield put({type:"ADD_TASK_SUCCEEDED", payload: action.payload});
+  yield put({ type: "ADD_TASK_SUCCEEDED", payload: action.payload });
 }
 
 function* fetchTasks(action) {
@@ -23,13 +23,13 @@ function* fetchTasks(action) {
   console.log(result.data);
 
   // 2. dispatch를 실행하는 부분
-  yield put({type:'FETCH_TASKS_SUCCEEDED', payload: result.data})
+  yield put({ type: 'FETCH_TASKS_SUCCEEDED', payload: result.data })
 }
 
-function* removeTasks(action){
+function* removeTasks(action) {
   const result = yield call(api.delete, action.payload)
 
-  yield put({type:"REMOVE_TASK_SUCCEEDED", payload: action.payload});
+  yield put({ type: "REMOVE_TASK_SUCCEEDED", payload: action.payload });
 }
 
 function* tasksSaga() {
